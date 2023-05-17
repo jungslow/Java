@@ -19,7 +19,7 @@ public class LambdaEx10 {
 
 		// 컴공과 학생의 수학점수 평균
 		double avg2 = avgMath(t -> t.getMajor().equals("컴공"));
-		System.out.println("컴공과 평균 영어점수 : "+avg2);
+		System.out.println("컴공과 평균 수학점수 : "+avg2);
 											
 	}
 	
