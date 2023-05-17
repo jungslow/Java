@@ -1,6 +1,6 @@
 package chapter17;
 
-public class ThreadEx7 {
+public class ThreadEx06 {
 
 	public static void main(String[] args) {
 		
@@ -8,14 +8,16 @@ public class ThreadEx7 {
 		Thread t1 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				int i=1;
-				while (true) {
-					System.out.println("t1 : "+i);
-					i++;
-					if (Thread.interrupted()) {
-						System.out.println("비정상 실행 종료");
-						break;						
+				try {
+					int i=1;
+					while (true) {
+						System.out.println("t1 : "+i);
+						// sleep()을 넣지 않으면 interrupt되지 않음
+						Thread.sleep(10000);						
+						i++;
 					}
+				} catch (InterruptedException e) {
+					System.out.println("비정상 종료");
 				}
 				System.out.println("스레드 실행 종료");
 			}
@@ -28,6 +30,5 @@ public class ThreadEx7 {
 			System.out.println(e.getMessage());
 		}
 		t1.interrupt();
-		
 	}
 }

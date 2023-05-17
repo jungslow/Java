@@ -1,6 +1,6 @@
 package chapter17;
 
-public class ThreadEx9 {
+public class ThreadEx09 {
 
 	public static void main(String[] args) {
 		
